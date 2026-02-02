@@ -1,5 +1,6 @@
 package com.umbrellacorp.ecommerce.config;
 
+
 import java.time.LocalDate;
 import com.umbrellacorp.ecommerce.entities.Order;
 import com.umbrellacorp.ecommerce.entities.OrderStatus;
@@ -47,4 +48,3 @@ public class TesteConfig implements CommandLineRunner {
 
         System.out.println("---- DATABASE SEEDING CONCLUÍDO COM SUCESSO ----");
     }
-}
