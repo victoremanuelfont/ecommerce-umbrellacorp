@@ -1,11 +1,14 @@
 package com.umbrellacorp.ecommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
 @Table(name = "tb_order")
-public class Order {
+public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +20,7 @@ public class Order {
     private Integer status; // Gravamos como Inteiro no banco
 
     // Relacionamento: Vários pedidos para UM usuário
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;

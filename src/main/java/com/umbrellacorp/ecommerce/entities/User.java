@@ -7,6 +7,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
@@ -20,6 +23,9 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private LocalDate birthDate;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Order> orders = new ArrayList<>();
 
     public User(){
 
@@ -71,6 +77,10 @@ public class User implements Serializable {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
     @Override
