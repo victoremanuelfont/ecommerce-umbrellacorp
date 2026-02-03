@@ -47,4 +47,4 @@ public class TesteConfig implements CommandLineRunner {
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 
         System.out.println("---- DATABASE SEEDING CONCLUÍDO COM SUCESSO ----");
-    }
+    }}
